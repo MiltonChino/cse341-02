@@ -6,7 +6,7 @@ const routes = require("express").Router();
 
 // MongoDB Imports
 const { MongoClient } = require("mongodb");
-const mongodb = require("./db/connect");
+// const mongodb = require("./db/connect");
 
 const port = process.env.PORT || 3000;
 
