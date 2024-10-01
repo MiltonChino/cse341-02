@@ -10,20 +10,20 @@ const { MongoClient } = require("mongodb");
 
 const port = process.env.PORT || 3000;
 
- app.get("/", (req, res) => {
-   res.send("Hello Maria Martinez");
- });
- app.get("/helaman", (req, res) => {
-   res.send("Hello Helaman");
- });
- // Display contact information here
- app.get("/contacts", (req, res) => {
-   res.send("Contacs");
- });
+app.get("/", (req, res) => {
+  res.send("Hello Maria Martinez");
+});
+app.get("/helaman", (req, res) => {
+  res.send("Hello Helaman");
+});
+// Display contact information here
+app.get("/contacts", (req, res) => {
+  res.send("Contacts");
+});
 
- app.listen(process.env.PORT || port, () => {
-   console.log("Web Server is listening at port " + (process.env.PORT || port));
- });
+app.listen(process.env.PORT || port, () => {
+  console.log("Web Server is listening at port " + (process.env.PORT || port));
+});
 
 // MongoDB Implementation
 async function main() {
