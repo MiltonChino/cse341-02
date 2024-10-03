@@ -31,8 +31,7 @@ async function main() {
    * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
    * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
    */
-  const uri =
-    "mongodb+srv://adminUser:-CDDU5vGEgZa8ta@cluster0.tueaf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  const uri = process.env.DB_URL;
   const client = new MongoClient(uri);
 
   await client.connect();
