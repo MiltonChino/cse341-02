@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 
@@ -31,8 +33,9 @@ async function main() {
    * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
    * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
    */
-  const uri = process.env.DB_URL;
-  const client = new MongoClient(uri);
+  // const uri = proces.env.DB_URL;
+  // console.log(process.env.DB_URL)
+  const client = new MongoClient(process.env.DB_URL);
 
   await client.connect();
   await listDatabases(client);
