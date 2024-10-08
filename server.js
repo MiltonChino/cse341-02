@@ -1,7 +1,8 @@
-require("dotenv").config();
-
-const express = require("express");
+require("dotenv").config()
+const bodyParser = require('body-parser')
+const express = require("express")
 const app = express();
+
 
 const routes = require("express").Router();
 // const port = 3000;
@@ -22,6 +23,9 @@ app.get("/helaman", (req, res) => {
 app.get("/contacts", (req, res) => {
   res.send("Contacts");
 });
+
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 app.listen(process.env.PORT || port, () => {
   console.log("Web Server is listening at port " + (process.env.PORT || port));
