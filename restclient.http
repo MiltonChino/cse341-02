@@ -4,6 +4,11 @@ GET https://cse341-01-z2a3.onrender.com
 
 GET https://cse341-01-z2a3.onrender.com/helaman
 
+
+###
+GET https://localhost:3000/contacts
+###
+GET https://cse341-01-z2a3.onrender.com/contacts
 ###
 
 POST https://example.com/comments HTTP/1.1
