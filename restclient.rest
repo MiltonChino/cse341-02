@@ -1,0 +1,22 @@
+//Development
+###
+GET https://localhost:3000/
+###
+
+GET http://localhost:3000/contacts/66fbf7b510d4d2c528b1e32b
+###
+GET http://localhost:3000/contacts/
+
+###
+POST http://localhost:3000/contacts/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Milton",
+    "lastName": "Chino",
+    "email": "miltonchino@byui.com",
+    "favoriteColor": "blue",
+    "birthday": "05/08/97"
+}
+
+// Production
