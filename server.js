@@ -1,20 +1,19 @@
-const bodyParser = require('body-parser');
 const express = require('express');
-const contactsRoute = require('./routes/contacts');
+const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 
-const app = express();
 const port = process.env.PORT || 3000;
+const app = express();
 
-app.use(bodyParser.json());
-app.use(BodyParser.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
-app.use('/', contactsRoute);
+app
+  .use(bodyParser.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  })
+  .use('/', require('./routes'));
 
-mongodb.initDB((err, mongodb) => {
+mongodb.initDB((err) => {
   if (err) {
     console.log(err);
   } else {
